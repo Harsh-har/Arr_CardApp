@@ -621,7 +621,7 @@ class ChatScreenState extends State<ChatScreen> {
   Widget _buildPortraitBodyCard(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final double initialFraction = 300 / constraints.maxHeight;
+        final double initialFraction = 310 / constraints.maxHeight;
         final double minFraction = 180 / constraints.maxHeight;
 
         return Stack(
@@ -640,7 +640,7 @@ class ChatScreenState extends State<ChatScreen> {
             DraggableScrollableSheet(
               initialChildSize: initialFraction,
               minChildSize: minFraction,
-              maxChildSize: initialFraction, // 🔒 Drag lock
+              maxChildSize: initialFraction, // still locked
 
               builder: (context, scrollController) {
                 return Container(
