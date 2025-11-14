@@ -264,14 +264,15 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                         builder: (BuildContext context) {
                           return AlertDialog(
                             backgroundColor: Color(0xff171717),
-                            title: const Text("⚠️ Confirm Device Action",style: TextStyle(color: Colors.white),),
+
+                            title: const Text("Continue with the changes?",style: TextStyle(color: Colors.white,fontSize: 22),),
                             content: const Text(
-                                "Are you sure you want to change this scene state?",style: TextStyle(color: Colors.white)),
+                                "Are you sure you want to change the scene?",style: TextStyle(color: Colors.white)),
                             actions: [
                               TextButton(
                                 onPressed: () =>
                                     Navigator.pop(context),
-                                child: const Text("Cancel"),
+                                child: const Text("Cancel",style: TextStyle(color: Color(0xff0071A9)),),
                               ),
                               ElevatedButton(
                                 onPressed: () async {
@@ -305,7 +306,7 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                                   await _publishToAllTopics(
                                       mqttService, message);
                                 },
-                                child: const Text("Yes"),
+                                child: const Text("Yes",style: TextStyle(color: Colors.white),),
                               ),
                             ],
                           );
