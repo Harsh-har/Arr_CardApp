@@ -637,55 +637,52 @@ class ChatScreenState extends State<ChatScreen> {
               ],
             ),
 
-              DraggableScrollableSheet(
+            DraggableScrollableSheet(
               initialChildSize: initialFraction,
-        minChildSize: minFraction,
-        maxChildSize: 1.0,
+              minChildSize: minFraction,
+              maxChildSize: initialFraction, // 🔒 Drag lock
 
-        builder: (context, scrollController) {
-        return Container(
-        decoration: const BoxDecoration(
-        color: Color(0xff171717),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
-        ),
+              builder: (context, scrollController) {
+                return Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff171717),
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
+                  ),
+                  padding: const EdgeInsets.all(14),
 
-        padding: const EdgeInsets.all(14),
+                  child: SingleChildScrollView(
+                    controller: scrollController, // ❗ Keep it
+                    physics: const BouncingScrollPhysics(), // ✔ scrolling allowed
 
-        child: SingleChildScrollView(
-        controller: scrollController,
-        child: Column(
-        children: [
+                    child: Column(
+                      children: [
+                        Center(
+                          child: Container(
+                            width: 55,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[500],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
 
+                        const SizedBox(height: 12),
 
-        Center(
-        child: Container(
-        width: 55,
-        height: 5,
-        decoration: BoxDecoration(
-        color: Colors.grey[500],
-        borderRadius: BorderRadius.circular(10),
-        ),
-        ),
-        ),
-
-        const SizedBox(height: 12),
-
-        SizedBox(
-        height: 600,
-        child: DynamicSceneScreen(),
-        ),
-        ],
-        ),
-        ),
-        );
-        },
-              ),
-
-        ],
+                        DynamicSceneScreen(), // ❗ REMOVE FIXED HEIGHT
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
         );
       },
     );
   }
+
+
 
 
 

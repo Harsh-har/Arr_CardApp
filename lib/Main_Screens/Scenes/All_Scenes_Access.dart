@@ -263,35 +263,50 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            backgroundColor: Color(0xff171717),
+                            backgroundColor: const Color(0xff171717),
 
-                            title: const Text("Continue with the changes?",style: TextStyle(color: Colors.white,fontSize: 22),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(28),
+                            ),
+
+                            title: const Text(
+                              "Continue with the changes?",
+                              style: TextStyle(color: Colors.white, fontSize: 22),
+                            ),
                             content: const Text(
-                                "Are you sure you want to change the scene?",style: TextStyle(color: Colors.white)),
+                              "Are you sure you want to change the scene?",
+                              style: TextStyle(color: Colors.white),
+                            ),
+
                             actions: [
                               TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(context),
-                                child: const Text("Cancel",style: TextStyle(color: Color(0xff0071A9)),),
+                                onPressed: () => Navigator.pop(context),
+                                child: const Text(
+                                  "Cancel",
+                                  style: TextStyle(color: Color(0xff0071A9)),
+                                ),
                               ),
+
                               ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xff0071A9),
+                                  // shape: RoundedRectangleBorder(
+                                  //   borderRadius: BorderRadius.circular(17),
+                                  // ),
+
+                                  foregroundColor: Colors.white,
+                                ),
                                 onPressed: () async {
                                   Navigator.pop(context);
-                                  final newState =
-                                  !(_deviceStates[key] ?? false);
+                                  final newState = !(_deviceStates[key] ?? false);
 
                                   setState(() {
-
                                     if (newState) {
                                       for (var other in _scenes) {
-                                        final otherKey =
-                                            "scene_${other['id']}";
-                                        if (otherKey != key &&
-                                            (_deviceStates[otherKey] ??
-                                                false)) {
+                                        final otherKey = "scene_${other['id']}";
+                                        if (otherKey != key && (_deviceStates[otherKey] ?? false)) {
                                           _deviceStates[otherKey] = false;
-                                          _saveDeviceState(
-                                              otherKey, false);
+                                          _saveDeviceState(otherKey, false);
                                         }
                                       }
                                     }
@@ -300,16 +315,18 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                                     _saveDeviceState(key, newState);
                                   });
 
-                                  final message = newState
-                                      ? "#*6*$id*1*1*#"
-                                      : "#*6*$id*0*1*#";
-                                  await _publishToAllTopics(
-                                      mqttService, message);
+                                  final message =
+                                  newState ? "#*6*$id*1*1*#" : "#*6*$id*0*1*#";
+                                  await _publishToAllTopics(mqttService, message);
                                 },
-                                child: const Text("Yes",style: TextStyle(color: Colors.white),),
+                                child: const Text(
+                                  "Yes",
+                                  style: TextStyle(color: Colors.white),
+                                ),
                               ),
                             ],
                           );
+
                         },
                       );
                     },//f
