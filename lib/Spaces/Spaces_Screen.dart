@@ -179,7 +179,7 @@ class _SpacesBodyState extends State<SpacesBody> {
               child: const Text(
                 "Create Your Own Space",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Color(0xff00A1F1),
                   fontSize: 15,
                   decoration: TextDecoration.underline,
                 ),
@@ -198,18 +198,7 @@ class _SpacesBodyState extends State<SpacesBody> {
               itemCount: spaces.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  // onTap: () async {
-                  //   await Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (_) => SpaceDetailScreen(spaceName: spaces[index],  roomName: selectedRoom),
-                  //     ),
-                  //   );
-                  //
-                  //   // Reload spaces/devices when returning
-                  //   _loadSpaces();
-                  //   setState(() {});
-                  // },
+
 
                   onLongPress: () => _confirmDelete(spaces[index]),
                   child: _spaceCard(spaces[index]),

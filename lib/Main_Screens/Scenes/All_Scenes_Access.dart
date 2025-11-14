@@ -122,12 +122,12 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                 color: Colors.white,
               ),
             ),
-            IconButton(
-              onPressed: null,
-              icon: const Icon(Icons.add, color: Colors.white, size: 30),
-              splashRadius: 15,
-              tooltip: "Add Scene",
-            ),
+            // IconButton(
+            //   onPressed: null,
+            //   icon: const Icon(Icons.add, color: Colors.white, size: 30),
+            //   splashRadius: 15,
+            //   tooltip: "Add Scene",
+            // ),
           ],
         ),
 
@@ -259,12 +259,14 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                   return GestureDetector(
                     onTap: () {
                       showDialog(
+
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: const Text("⚠️ Confirm Device Action"),
+                            backgroundColor: Color(0xff171717),
+                            title: const Text("⚠️ Confirm Device Action",style: TextStyle(color: Colors.white),),
                             content: const Text(
-                                "Are you sure you want to change this scene state?"),
+                                "Are you sure you want to change this scene state?",style: TextStyle(color: Colors.white)),
                             actions: [
                               TextButton(
                                 onPressed: () =>
@@ -316,7 +318,7 @@ class _DynamicSceneScreenState extends State<DynamicSceneScreen> {
                         color: const Color(0xFF1D1D1D),
                         borderRadius: BorderRadius.circular(16),
                         border: isOn
-                            ? Border.all(color: Colors.blueAccent, width: 2)
+                            ? Border.all(color: Color(0xff00A1F1), width: 2)
                             : null,
                         boxShadow: isOn
                             ? [

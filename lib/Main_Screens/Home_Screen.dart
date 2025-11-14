@@ -619,26 +619,77 @@ class ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildPortraitBodyCard(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double initialFraction = 300 / constraints.maxHeight;
+        final double minFraction = 180 / constraints.maxHeight;
 
-    return Column(
-      children: [
+        return Stack(
+          children: [
+            Column(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 3),
+                    child: CardBaseScreen(),
+                  ),
+                ),
+              ],
+            ),
 
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3),
-            child: CardBaseScreen(),
-          ),
+              DraggableScrollableSheet(
+              initialChildSize: initialFraction,
+        minChildSize: minFraction,
+        maxChildSize: 1.0,
+
+        builder: (context, scrollController) {
+        return Container(
+        decoration: const BoxDecoration(
+        color: Color(0xff171717),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
         ),
+
+        padding: const EdgeInsets.all(14),
+
+        child: SingleChildScrollView(
+        controller: scrollController,
+        child: Column(
+        children: [
+
+
+        Center(
+        child: Container(
+        width: 55,
+        height: 5,
+        decoration: BoxDecoration(
+        color: Colors.grey[500],
+        borderRadius: BorderRadius.circular(10),
+        ),
+        ),
+        ),
+
+        const SizedBox(height: 12),
 
         SizedBox(
-          height: 300,
-          width: double.infinity,
-          child: DynamicSceneScreen(),
+        height: 600,
+        child: DynamicSceneScreen(),
         ),
-      ],
-    );
+        ],
+        ),
+        ),
+        );
+        },
+              ),
 
+        ],
+        );
+      },
+    );
   }
+
+
+
+
 
   Widget _buildDrawer(BuildContext context) {
     final mqttService = Provider.of<MQTTService>(context);
@@ -741,7 +792,7 @@ class ChatScreenState extends State<ChatScreen> {
                 ),
           ),
           ListTile(
-            leading: const Icon(Icons.get_app, color: Colors.blueAccent),
+            leading: const Icon(Icons.get_app, color: Color(0xff00A1F1)),
             title: const Text(
                 "Show Subscribed Data", style: TextStyle(color: Colors.white)),
             onTap: () =>
@@ -768,7 +819,7 @@ class ChatScreenState extends State<ChatScreen> {
           ),
 
           ListTile(
-            leading: const Icon(Icons.download, color: Colors.blue),
+            leading: const Icon(Icons.download, color: Color(0xff00A1F1)),
             title: const Text(
                 "Import Data", style: TextStyle(color: Colors.white)),
             onTap: () => _showImportDialog(context),

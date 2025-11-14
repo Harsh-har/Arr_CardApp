@@ -339,20 +339,13 @@ class _CardBaseScreenState extends State<CardBaseScreen>  with TickerProviderSta
 
               return GestureDetector(
                 onTap: () {
-                  final isActive = roomProvider.activeRoom == roomName;
-                  roomProvider.setActiveRoom(isActive ? null : roomName);
+                  roomProvider.setActiveRoom(roomName);
+                  _openAllRoomAccess(context, roomName);
                 },
-                onDoubleTap: () => _openAllRoomAccess(context, roomName),
                 onLongPress: () => _handleLongPress(roomName),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: isActive
-                        ? Colors.blue.withOpacity(0.15)
-                        : Colors.transparent,
-                    border: Border.all(
-                      color: isActive ? Colors.blueAccent : Colors.grey,
-                      width: 2,
-                    ),
+                    color: Color(0xff171717),
                     borderRadius: BorderRadius.circular(18),
                   ),
                   child: Center(
@@ -368,6 +361,7 @@ class _CardBaseScreenState extends State<CardBaseScreen>  with TickerProviderSta
                   ),
                 ),
               );
+
             },
           ),
         ),
@@ -396,11 +390,6 @@ class _CardBaseScreenState extends State<CardBaseScreen>  with TickerProviderSta
                 builder: (context, value, child) {
                   return Transform.translate(
                     offset: Offset(0, value),
-                    child: const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Colors.white,
-                      size: 35,
-                    ),
                   );
                 },
               ),
