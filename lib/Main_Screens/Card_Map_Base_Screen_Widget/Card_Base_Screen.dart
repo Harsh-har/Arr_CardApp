@@ -86,7 +86,7 @@ class _CardBaseScreenState extends State<CardBaseScreen>  with TickerProviderSta
                   ),
                   title: Row(
                     children: const [
-                      Icon(Icons.meeting_room, color: Colors.tealAccent),
+                      Icon(Icons.meeting_room, color:Color(0xff0071A9)),
                       SizedBox(width: 8),
                       Text("Add Room", style: TextStyle(color: Colors.white)),
                     ],
@@ -101,7 +101,7 @@ class _CardBaseScreenState extends State<CardBaseScreen>  with TickerProviderSta
                           style: const TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             prefixIcon: const Icon(
-                                Icons.home, color: Colors.tealAccent),
+                                Icons.home, color: Color(0xff0071A9)),
                             hintText: "Enter room name",
                             hintStyle: const TextStyle(color: Colors.white54),
                             filled: true,
@@ -165,14 +165,14 @@ class _CardBaseScreenState extends State<CardBaseScreen>  with TickerProviderSta
                   actions: [
                     TextButton.icon(
                       onPressed: () => Navigator.pop(context),
-                      icon: const Icon(Icons.close, color: Colors.red),
+                      icon: const Icon(Icons.close, color: Color(0xff0071A9)),
                       label: const Text(
-                          "Cancel", style: TextStyle(color: Colors.red)),
+                          "Cancel", style: TextStyle(color: Color(0xff0071A9))),
                     ),
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.tealAccent,
-                        foregroundColor: Colors.black,
+                        backgroundColor: Color(0xff0071A9),
+                        foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),

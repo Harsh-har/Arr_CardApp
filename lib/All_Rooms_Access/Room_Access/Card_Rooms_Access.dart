@@ -310,14 +310,15 @@ class _CardRoomsAccessState extends State<CardRoomsAccess> {
       context: context,
       builder:
           (context) => AlertDialog(
-            title: const Text("Delete Device"),
+            backgroundColor: const Color(0xff171717),
+            title: const Text("Delete Device",style: TextStyle(color: Colors.white),),
             content: Text(
-              "Are you sure you want to delete ${deviceToDelete.deviceId}?",
+              "Are you sure you want to delete ${deviceToDelete.deviceId}?",style: TextStyle(color: Colors.white)
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text("Cancel"),
+                child: const Text("Cancel",style: TextStyle(color: Color(0xff0071A9))),
               ),
               TextButton(
                 onPressed: () async {

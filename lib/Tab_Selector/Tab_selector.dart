@@ -45,29 +45,29 @@ class TabSelector extends StatelessWidget {
           const SizedBox(width: 5),
 
           // Spaces Button
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF121212),
-              minimumSize: const Size(125, 40),
-              side: !showDevices
-                  ? const BorderSide(color: Colors.blueAccent, width: 1.7)
-                  : BorderSide.none,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-            ),
-            onPressed: () {
-              if (showDevices) {
-                onTabChanged(false); // false = Spaces
-              }
-            },
-            child: Text(
-              "Spaces",
-              style: TextStyle(
-                color: !showDevices ? Colors.white : Colors.grey,
-              ),
-            ),
-          ),
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //     backgroundColor: Color(0xFF121212),
+          //     minimumSize: const Size(125, 40),
+          //     side: !showDevices
+          //         ? const BorderSide(color: Colors.blueAccent, width: 1.7)
+          //         : BorderSide.none,
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(16),
+          //     ),
+          //   ),
+          //   onPressed: () {
+          //     if (showDevices) {
+          //       onTabChanged(false); // false = Spaces
+          //     }
+          //   },
+          //   child: Text(
+          //     "Spaces",
+          //     style: TextStyle(
+          //       color: !showDevices ? Colors.white : Colors.grey,
+          //     ),
+          //   ),
+          // ),
 
           const SizedBox(width: 5),
         ],

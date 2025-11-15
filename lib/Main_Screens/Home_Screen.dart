@@ -763,50 +763,50 @@ class ChatScreenState extends State<ChatScreen> {
             ),
           ),
 
-          ListTile(
-            leading: const Icon(Icons.settings, color: Colors.grey),
-            title: const Text(
-                "Raw Data", style: TextStyle(color: Colors.white)),
-            onTap: () => _showBackendData(context),
-          ),
-          ListTile(
-            leading: const Icon(Icons.publish, color: Colors.yellow),
-            title: const Text("Topic", style: TextStyle(color: Colors.white)),
-            onTap: () =>
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PublishTopicEdit()),
-                ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.grading, color: Colors.green),
-            title: const Text(
-                "Tabular Format Data", style: TextStyle(color: Colors.white)),
-            onTap: () =>
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DeviceTablePage()),
-                ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.get_app, color: Color(0xff00A1F1)),
-            title: const Text(
-                "Show Subscribed Data", style: TextStyle(color: Colors.white)),
-            onTap: () =>
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ShowSubscribedDataScreen()),
-                ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.unsubscribe, color: Colors.orangeAccent),
-            title: const Text("Show Subscribed Topics",
-                style: TextStyle(color: Colors.white)),
-            onTap: () => _showSubscribeOption(context),
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.settings, color: Colors.grey),
+          //   title: const Text(
+          //       "Raw Data", style: TextStyle(color: Colors.white)),
+          //   onTap: () => _showBackendData(context),
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.publish, color: Colors.yellow),
+          //   title: const Text("Topic", style: TextStyle(color: Colors.white)),
+          //   onTap: () =>
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(builder: (context) => PublishTopicEdit()),
+          //       ),
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.grading, color: Colors.green),
+          //   title: const Text(
+          //       "Tabular Format Data", style: TextStyle(color: Colors.white)),
+          //   onTap: () =>
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(builder: (context) => DeviceTablePage()),
+          //       ),
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.get_app, color: Color(0xff00A1F1)),
+          //   title: const Text(
+          //       "Show Subscribed Data", style: TextStyle(color: Colors.white)),
+          //   onTap: () =>
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) => ShowSubscribedDataScreen()),
+          //       ),
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.unsubscribe, color: Colors.orangeAccent),
+          //   title: const Text("Show Subscribed Topics",
+          //       style: TextStyle(color: Colors.white)),
+          //   onTap: () => _showSubscribeOption(context),
+          // ),
 
-          const Divider(color: Colors.grey),
+          // const Divider(color: Colors.grey),
 
           ListTile(
             leading: const Icon(Icons.upload_file, color: Colors.green),
@@ -822,26 +822,26 @@ class ChatScreenState extends State<ChatScreen> {
             onTap: () => _showImportDialog(context),
           ),
 
-          ListTile(
-            leading: const Icon(Icons.delete_forever, color: Colors.red),
-            title: const Text("Delete Data Permanently",
-                style: TextStyle(color: Colors.white)),
-            onTap: () => _confirmDeleteData(context),
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.delete_forever, color: Colors.red),
+          //   title: const Text("Delete Data Permanently",
+          //       style: TextStyle(color: Colors.white)),
+          //   onTap: () => _confirmDeleteData(context),
+          // ),
 
           const Divider(color: Colors.grey),
 
-          ListTile(
-            leading: const Icon(
-                Icons.info_outline_rounded, color: Colors.white),
-            title: const Text(
-                "About SWAJA ROBOTICS", style: TextStyle(color: Colors.white)),
-            onTap: () =>
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AboutSwaro()),
-                ),
-          ),
+          // ListTile(
+          //   leading: const Icon(
+          //       Icons.info_outline_rounded, color: Colors.white),
+          //   title: const Text(
+          //       "About SWAJA ROBOTICS", style: TextStyle(color: Colors.white)),
+          //   onTap: () =>
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(builder: (context) => AboutSwaro()),
+          //       ),
+          // ),
 
         ],
       ),
